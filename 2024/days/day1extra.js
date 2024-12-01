@@ -1,9 +1,11 @@
 import { runWithInput } from "../../function.js";
 
-const columnCreate = (input) => {
+let sum = 0
+let thisSum = 0
+
+const columnSplit = (input) => {
     const leftColumn = [];
     const rightColumn = [];
-    let summaryDistance = 0;
 
     input.split("\n").forEach((row) => {
         const numbers = row.split("  ");
@@ -16,11 +18,16 @@ const columnCreate = (input) => {
     rightColumn.sort();
 
     for (let i = 0; i < leftColumn.length; ++i) {
-        const distance = Math.abs(leftColumn[i] - rightColumn[i]);
-        summaryDistance += distance;
+        leftColumn[i]
+        thisSum = 0
+        for (let y = 0; y < rightColumn.length; ++y){
+            if (leftColumn[i] == rightColumn[y]){
+                sum += leftColumn[i] 
+            }
+        }
     }
 
-    return summaryDistance;
+    return sum;
 };
 
-runWithInput("1.txt", columnCreate);
+runWithInput("1.txt", columnSplit);
